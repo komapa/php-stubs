@@ -1,0 +1,20 @@
+from http://youtrack.jetbrains.net/issue/WI-174:
+
+STUBS are normal, syntactically correct PHP files that contain function & class signatures, constant definitions, etc. for all built in PHP stuff and most standard extensions. Stubs need to include complete PHPDOC, especially proper @return annotations
+
+IDE need them for completion, code inspection, type inference, doc popups, etc. Quality of most of this services depend on quality of the stubs (basically their PHPDOC @annotations).
+
+Exactly the same kind of stubs is used for similar purposes by NetBeans PHP and Eclipse PDT.
+
+Stubs are currently located in
+/plugins/php/lib/php.jar/com/jetbrains/php/lang/psi/stubs/data/ within PhpStorm distribution. Don't forget to invalidate caches if you update anything there.
+
+It seems that there's no reliable automatic way to generate stubs from PHP sources/docs. Perhaps crowdsourcing is the solution.
+
+As for organisation of the process and tools involved I think its too early to start something big.
+At the moment everyone can look into what IS documented just by peeking into distribution. If anybody actually started work on some extension - just create a separate ticket and attach a file to it. I'll look into it and merge into the distro.
+
+If you had some generation tools or scripts or just insights to share - do not hesitate to drop a message.
+I will cleanup the thread if it gets too big and we will change process to something more appropriate if there will be some significant activity here.
+
+Legal notice: we do accept stub patches along with link to publicly available source of information used to make them. i.e. you prepare them (basically transform to appropriate form) from official (and public) documentation.
